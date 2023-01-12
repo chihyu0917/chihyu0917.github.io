@@ -27,7 +27,7 @@ body {
 } */
 
 title {
-	font-family: Helvetica, Arial, sans-serif;
+	font-family: 'Times New Roman', Times, serif;
 	font-size: 37px;
 	color: #222;
 	display: block;
@@ -37,7 +37,7 @@ title {
 }
 
 h3 {
-	font-family: Helvetica, Arial, sans-serif;
+	font-family: 'Times New Roman', Times, serif;
 	font-size: 37px;
 	color: #222;
 	display: block;
@@ -47,7 +47,17 @@ h3 {
 }
 
 p {
-	font-family: Helvetica, Arial, sans-serif;
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 25px;
+	color: #444;
+	display: block;
+	width: 800px;
+	margin: 0 auto;
+	text-align: left;
+}
+
+a {
+	font-family: 'Times New Roman', Times, serif;
 	font-size: 25px;
 	color: #444;
 	display: block;
