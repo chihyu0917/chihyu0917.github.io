@@ -28,8 +28,18 @@ body {
 
 title {
 	font-family: 'Times New Roman', Times, serif;
-	font-size: 37px;
+	font-size: 40px;
 	color: #222;
+	display: block;
+	width: 800px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+h2 {
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 35px;
+	color: #444;
 	display: block;
 	width: 800px;
 	margin: 0 auto;
@@ -38,8 +48,8 @@ title {
 
 h3 {
 	font-family: 'Times New Roman', Times, serif;
-	font-size: 37px;
-	color: #222;
+	font-size: 30px;
+	color: #444;
 	display: block;
 	width: 800px;
 	margin: 0 auto;
@@ -57,9 +67,9 @@ p {
 }
 
 a {
-	font-family: 'Times New Roman', Times, serif;
-	font-size: 25px;
-	color: #444;
+	/* font-family: 'Times New Roman', Times, serif;
+	font-size: 30px;
+	color: #444;  */
 	display: block;
 	width: 800px;
 	margin: 0 auto;
