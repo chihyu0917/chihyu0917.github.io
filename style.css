@@ -138,9 +138,9 @@ body * {
     display: block !important;
 }
 
-.mb {
+/* .mb {
     display: none !important;
-}
+} */
 
 .chihyu-window .btn-icon {
     display: block;
@@ -148,27 +148,27 @@ body * {
     cursor: pointer;
 }
 
-.chihyu-window .btn-icon img {
+.chihyu-window .btn-icon a img {
     display: block;
     width: 100%;
 }
 
-.chihyu-window .btn-icon img.on {
+/* .chihyu-window .btn-icon a img.on {
     display: none;
     position: absolute;
     left: 0;
     top: 0;
     width: 100%;
+} */
+
+.chihyu-window .btn-icon.btn-on a img {
+    visibility: visible;
 }
 
-/* .newjeans-window .btn-icon.btn-on img {
-    visibility: hidden;
-}
-
-.newjeans-window .btn-icon.btn-on img.on {
+/* .chihyu-window .btn-icon.btn-on img.on {
     display: block;
     visibility: visible;
-}*/
+} */
 
 .chihyu-window main {
     display: block;
@@ -247,13 +247,14 @@ body * {
     flex: 0 0 auto;
 } */
 
-.newjeans-window main .btn-folder-1 {
-    right: 50px;
+.chihyu-window main .btn-folder-1 {
+    left: 50px;
     top: 100px;
-    width: 129px;
+    width: 100px;
+	/* height: 50px; */
 }
 
-.newjeans-window main .btn-folder-2 {
+/* .newjeans-window main .btn-folder-2 {
     right: 50px;
     top: 300px;
     width: 129px;
@@ -298,15 +299,16 @@ body * {
     padding: 12px;
     text-align: center;
     line-height: 1.5;
-}
+} */
 
 @media screen and (max-height: 1080px) {
-    .newjeans-window main .btn-folder-1 {
+    .chihyu-window main .btn-folder-1 a {
         top: 10vh;
-        width: 11.95vh;
-    }
+        width: 15vh;
+		/* height: 20vh; */
+    } 
 
-    .newjeans-window main .btn-folder-2 {
+    /* .newjeans-window main .btn-folder-2 {
         top: 28vh;
         width: 11.95vh;
     }
@@ -317,7 +319,7 @@ body * {
 
     .newjeans-window main .btn-melody-card {
         width: 38.71vh;
-    }
+    }*/
 
 }
 
@@ -326,9 +328,9 @@ body * {
         display: none !important;
     }
 
-    .mb {
+    /* .mb {
         display: block !important;
-    }
+    } */
 
     html,
     body,
@@ -339,13 +341,13 @@ body * {
         height: 100vh;
     }
 
-    .newjeans-window {
+    .chihyu-window {
         display: block;
         width: 100vw;
         height: 100vh;
     }
 
-    .newjeans-window main {
+    .chihyu-window main {
         position: fixed;
         left: 0;
         top: 0;
@@ -353,14 +355,14 @@ body * {
         height: 100vh;
     }
 
-    .newjeans-window main .btn-folder-1 {
+    .chihyu-window main .btn-folder-1 {
         left: 25px;
         top: 25px;
         right: auto;
         width: 100px;
     }
 
-    .newjeans-window main .btn-folder-2 {
+    /* .newjeans-window main .btn-folder-2 {
         left: 25px;
         top: 150px;
         right: auto;
@@ -383,22 +385,22 @@ body * {
         bottom: 100px;
         right: 23px;
         width: 250px;
-    }
+    } */
 
-    .newjeans-window main>.sns-list {
+    .chihyu-window main>.sns-list {
         position: absolute;
         left: 50%;
         bottom: 30px;
         transform: translateX(-50%);
     }
 
-    .newjeans-window main>.sns-list>ul {
+    .chihyu-window main>.sns-list>ul {
         display: flex;
         margin-left: auto;
         margin-right: auto;
     }
 
-    .newjeans-window main>.sns-list>ul>li {
+    .chihyu-window main>.sns-list>ul>li {
         flex: 0 0 auto;
         position: relative;
         width: 50px;
@@ -406,13 +408,13 @@ body * {
         padding: 0 10px;
     }
 
-    .newjeans-window main>.sns-list>ul>li>a {
+    .chihyu-window main>.sns-list>ul>li>a {
         display: inline-block;
         width: 40px;
         position: relative;
     }
 
-    .newjeans-window main>.sns-list>ul>li>a>img {
+    .chihyu-window main>.sns-list>ul>li>a>img {
         width: 100%
     }
 }
