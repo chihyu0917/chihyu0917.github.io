@@ -194,6 +194,15 @@ body * {
     color: #fff;
 }
 
+.chihyu-window header>.title2 {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    font-size: 25px;
+    color: #fff;
+}
+
 .chihyu-window header>.util {
     display: block;
     position: absolute;
@@ -254,6 +263,11 @@ body * {
 	/* height: 50px; */
 }
 
+.chihyu-window main .btn-folder-1 a {
+    top: 10vh;
+    width: 15vh;
+} 
+
 /* .newjeans-window main .btn-folder-2 {
     right: 50px;
     top: 300px;
@@ -301,12 +315,11 @@ body * {
     line-height: 1.5;
 } */
 
-@media screen and (max-height: 1080px) {
+/* @media screen and (max-height: 1080px) {
     .chihyu-window main .btn-folder-1 a {
         top: 10vh;
         width: 15vh;
-		/* height: 20vh; */
-    } 
+    }  */
 
     /* .newjeans-window main .btn-folder-2 {
         top: 28vh;
@@ -321,9 +334,10 @@ body * {
         width: 38.71vh;
     }*/
 
-}
+/* } */
 
-@media screen and (max-width :767px) {
+/* @media screen and (max-width :767px) { */
+@media screen and (max-width :10px) {
     .pc {
         display: none !important;
     }
