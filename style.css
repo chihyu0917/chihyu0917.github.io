@@ -203,7 +203,16 @@ body * {
     color: #fff;
 }
 
-.chihyu-window header>.project {
+.chihyu-window header>.title3 {
+    display: block;
+    position: absolute;
+    left: 10vw;
+    top: 20px;
+    font-size: 25px;
+    color: #fff;
+}
+
+/* .chihyu-window header>.project {
     display: block;
     position: absolute;
     left: 150px;
@@ -229,7 +238,7 @@ body * {
     font-size: 15px;
     width: 25vw;
     color: #fff;
-}
+} */
 
 .chihyu-window header>.util {
     display: block;
