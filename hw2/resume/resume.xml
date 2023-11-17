@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<resume>
+    <name>Paul Wang</name>
+    <personalInformation>
+        <degree>MBA</degree>
+        <phone>+123-456-7890</phone>
+        <email>hello@greatresume.com</email>
+    </personalInformation>
+    <education>
+        <course>
+            <degree>Master of Business Administration</degree>
+            <institution>Florida University</institution>
+            <duration>2018</duration>
+        </course>
+        <course>
+            <degree>Bachelor of Business (Accounting)</degree>
+            <institution>Florida State University</institution>
+            <duration>2011-2014</duration>
+        </course>
+    </education>
+    <experience>
+        <job>
+            <title>Finance Director</title>
+            <company>Ginyard International Co.</company>
+            <duration>
+                <start>May 2022</start>
+                <end>Present</end>
+            </duration>
+            <responsibilities>
+                <item>Directed financial planning and forecasting processes, aligning with the company's strategic goals and market trends.</item>
+                <item>Led a team of analysts in monthly and quarterly financial reviews, ensuring accuracy and timely insights for decision-makers.</item>
+            </responsibilities>
+        </job>
+        <job>
+            <title>Senior Commercial Manager</title>
+            <company>Ginyard International Co.</company>
+            <duration>
+                <start>January 2020</start>
+                <end>May 2022</end>
+            </duration>
+            <responsibilities>
+                <item>Coordinated company-wide commercial strategies and activities to ensure business objectives were met.</item>
+                <item>Negotiated contracts with key clients and suppliers to ensure pricing and terms aligned with the company's interests.</item>
+            </responsibilities>
+        </job>
+    </experience>
+    <skills>
+        <skill>Data modeling</skill>
+        <skill>SQL</skill>
+    </skills>
+</resume>
