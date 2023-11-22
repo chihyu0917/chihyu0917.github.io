@@ -6,7 +6,7 @@ body {
 }
 
 header {
-    background-color: #E5BCBA;
+    background-color: #031E31;
     color: #fff;
     padding: 1rem 0;
     text-align: center;
@@ -32,7 +32,7 @@ main {
     background-image: url('bg.jpg'); 
     background-size: cover; 
     background-position: center; 
-    color: rgb(113, 113, 113); 
+    color: #fff; 
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
 }
@@ -56,9 +56,10 @@ img {
 footer {
     text-align: center;
     padding: 20px 0;
-    background: #7BA4BA;
+    background: #76B0BC;
     color: #fff;
 }
+
 footer p a{
     color: #fff;
 }
