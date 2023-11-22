@@ -1,393 +1,75 @@
-* {
-	margin: 0;
-	padding: 0;
-}
-
 body {
-	background: #c6c6c6;
+    font-family: 'Calluna', serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
 }
 
-/* title {
-	font-family: 'Times New Roman', Times, serif;
-	font-size: 40px;
-	color: #222;
-	display: block;
-	width: 800px;
-	margin: 0 auto;
-	text-align: center;
+header {
+    background-color: #E5BCBA;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
 }
 
-h2 {
-	font-family: 'Times New Roman', Times, serif;
-	font-size: 35px;
-	color: #444;
-	display: block;
-	width: 800px;
-	margin: 0 auto;
-	text-align: left;
+header nav ul {
+    list-style: none;
+    padding: 0;
 }
 
-h3 {
-	font-family: 'Times New Roman', Times, serif;
-	font-size: 30px;
-	color: #444;
-	display: block;
-	width: 800px;
-	margin: 0 auto;
-	text-align: left;
+header nav ul li {
+    display: inline;
+    margin: 0 20px;
 }
 
-p {
-	font-family: 'Times New Roman', Times, serif;
-	font-size: 25px;
-	color: #444;
-	display: block;
-	width: 800px;
-	margin: 0 auto;
-	text-align: left;
-}
-
-a {
-	display: block;
-	width: 800px;
-	margin: 0 auto;
-	text-align: left;
-}
-
-.info {
-	margin: 14px auto;
-	text-align: justify;
-	font-size: 18px;
-	color: #999;
-}
-
-label {
-	font-family: Helvetica, Arial, sans-serif;
-	font-size: 18px;
-	color: #555;
-	width: 400px;
-	margin: 0 auto;
-	display: block;
-} */
-
-.chihyu-window main .bg {
-    display: block;
-    position: relative;
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-}
-
-.chihyu-window main .bg>img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    z-index: -100;
-    transform: translate(-50%, -50%);
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
-}
-
-@media screen and (max-width :767px) {}
-
-/* @import url("../../fonts/apple-sd-gothic-neo.css");
-@import url("https://fonts.googleapis.com/earlyaccess/notosanskr.css"); */
-
-html,
-body,
-#root {
-    display: block;
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-}
-
-body * {
-    font-family: fantasy;
-    -ms-overflow-style: none;
-    /* IE and Edge */
-    scrollbar-width: none;
-    /* Firefox */
-    user-select: none; 
-}
-
-.chihyu-window {
-    display: block;
-    width: 100%;
-    height: 100%;
-}
-
-.chihyu-window a,
-.chihyu-window a:visited,
-.chihyu-window a:focus {
-    color: inherit;
+header nav ul li a {
+    color: #fff;
     text-decoration: none;
 }
 
-.pc {
-    display: block !important;
+main {
+    padding: 20px;
+    background-image: url('bg.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    color: rgb(113, 113, 113); 
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
 }
 
-/* .mb {
-    display: none !important;
-} */
-
-.chihyu-window .btn-icon {
-    display: block;
-    position: absolute;
-    cursor: pointer;
+main h2 a {
+    color: rgb(113, 113, 113); 
 }
 
-.chihyu-window .btn-icon a img {
-    display: block;
-    width: 100%;
+main img {
+    width: 30%;
+    height: 30%;
 }
 
-/* .chihyu-window .btn-icon a img.on {
-    display: none;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-} */
-
-.chihyu-window .btn-icon.btn-on a img {
-    visibility: visible;
+main p {
+    margin: 0 auto;
+    max-width: 800px;
 }
 
-/* .chihyu-window .btn-icon.btn-on img.on {
-    display: block;
-    visibility: visible;
-} */
-
-.chihyu-window main {
-    display: block;
-    width: 100%;
-    height: 100%;
-}  
-
-.chihyu-window header {
-    display: block;
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    z-index: 10;
+img {
+    width: 100px; 
+    height: auto;
 }
 
-.chihyu-window header>.title {
-    display: block;
-    position: absolute;
-    left: 20px;
-    top: 20px;
-    font-size: 25px;
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background: #7BA4BA;
+    color: #fff;
+}
+footer p a{
     color: #fff;
 }
 
-.chihyu-window header>.title2 {
-    display: block;
-    position: absolute;
-    right: 20px;
-    top: 20px;
-    font-size: 25px;
-    color: #fff;
-}
-
-.chihyu-window header>.title3 {
-    display: block;
-    position: absolute;
-    left: 10vw;
-    top: 20px;
-    font-size: 25px;
-    color: #fff;
-}
-
-.chihyu-window header>.title4 {
-    display: block;
-    position: absolute;
-    left: 40vw;
-    top: 20px;
-    font-size: 25px;
-    color: #fff;
-}
-
-.chihyu-window header>.title5 {
-    display: block;
-    position: absolute;
-    right: 10vw;
-    top: 20px;
-    font-size: 25px;
-    color: #fff;
-}
-
-.chihyu-window header>.fname {
-    display: block;
-    position: absolute;
-    left: 14vw;
-    top: 250px;
-    font-size: 12px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #fff;
-}
-
-/* .chihyu-window header>.project {
-    display: block;
-    position: absolute;
-    left: 150px;
-    top: 120px;
-    font-size: 28px;
-    color: #fff;
-}
-
-.chihyu-window header>.h3 {
-    display: block;
-    position: absolute;
-    left: 150px;
-    top: 40px;
-    font-size: 22px;
-    color: #fff;
-}
-
-.chihyu-window header>.p {
-    display: block;
-    position: absolute;
-    left: 50px;
-    top: 220px;
-    font-size: 15px;
-    width: 25vw;
-    color: #fff;
-} */
-
-.chihyu-window header>.util {
-    display: block;
-    position: absolute;
-    left: 350px;
-    top: 20px;
-    font-size: 25px;
-    color: #fff;
-}
-
-.chihyu-window header>.util>.sns-list {
-    display: inline-block;
-    position: relative;
-    margin-right: 23px;
-}
-
-.chihyu-window header>.util>.sns-list>ul {
-    display: flex;
-
-}
-
-.chihyu-window header>.util>.sns-list>ul>li {
-    flex: 0 0 auto;
-    padding: 0 10px;
-}
-
-.chihyu-window header>.util>.sns-list>ul>li>a {
-    display: block;
-    position: relative;
-    width: 25px;
-}
-
-.chihyu-window header>.util>.sns-list>ul>li>a>img {
-    width: 100%;
-}
-
-.chihyu-window main .btn-folder-1 {
-    left: 11vw;
-    top: 180px;
-    width: 100px;
-	/* height: 50px; */
-}
-
-.chihyu-window main .btn-folder-1 a {
-    top: 10vh;
-    width: 15vh;
-} 
-
-/* @media screen and (max-height: 1080px) {
-    .chihyu-window main .btn-folder-1 a {
-        top: 10vh;
-        width: 15vh;
-    }  */
-
-/* } */
-
-/* @media screen and (max-width :767px) { */
-@media screen and (max-width :10px) {
-    .pc {
-        display: none !important;
-    }
-
-    /* .mb {
-        display: block !important;
-    } */
-
-    html,
-    body,
-    #root {
+@media screen and (max-width: 600px) {
+    header nav ul li {
         display: block;
-        position: relative;
-        width: 100vw;
-        height: 100vh;
-    }
-
-    .chihyu-window {
-        display: block;
-        width: 100vw;
-        height: 100vh;
-    }
-
-    .chihyu-window main {
-        position: fixed;
-        left: 0;
-        top: 0;
-        width: 100vw;
-        height: 100vh;
-    }
-
-    .chihyu-window main .btn-folder-1 {
-        left: 25px;
-        top: 25px;
-        right: auto;
-        width: 100px;
-    }
-
-    .chihyu-window main>.sns-list {
-        position: absolute;
-        left: 50%;
-        bottom: 30px;
-        transform: translateX(-50%);
-    }
-
-    .chihyu-window main>.sns-list>ul {
-        display: flex;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .chihyu-window main>.sns-list>ul>li {
-        flex: 0 0 auto;
-        position: relative;
-        width: 50px;
-        text-align: center;
-        padding: 0 10px;
-    }
-
-    .chihyu-window main>.sns-list>ul>li>a {
-        display: inline-block;
-        width: 40px;
-        position: relative;
-    }
-
-    .chihyu-window main>.sns-list>ul>li>a>img {
-        width: 100%
+        margin: 10px 0;
     }
 }
