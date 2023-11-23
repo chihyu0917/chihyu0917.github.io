@@ -64,6 +64,22 @@ footer p a{
     color: #fff;
 }
 
+.responsive-iframe {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9的長寬比例 */
+    height: 0;
+    overflow: hidden;
+}
+
+.responsive-iframe iframe {
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+}
+
+
 @media screen and (max-width: 600px) {
     header nav ul li {
         display: block;
