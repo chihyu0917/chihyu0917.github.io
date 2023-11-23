@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chih-Yu's Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
 </head>
 <body>
     <header>
@@ -19,11 +20,22 @@
 
     <main>
         <h1>Sophie Huang's Portfolio</h1>
-        <h3><a href="https://chihyu0917.github.io/Star_Maze_Game/">Star Maze Game</a></h2>
-            <img src="screenshot1.png" alt="screenshot1" width="400" height="300">
-        <h3><a href="https://chihyu0917.github.io/Traffic_Data_Processing_and_Flow_Analysis/">Traffic Data Processing and Flow Analysis</a></h2>
-            <img src="screenshot2.png" alt="screenshot2" width="400" height="300">
-    </main>
+        <div class="slider">
+            <div class="slides">
+                <div class="slide">
+                    <h2><a href="https://chihyu0917.github.io/Star_Maze_Game/">Star Maze Game</a></h2>
+                    <img src="screenshot1.png" alt="Star Maze Game">
+                </div>
+                <div class="slide">
+                    <h2><a href="https://chihyu0917.github.io/Traffic_Data_Processing_and_Flow_Analysis/">Traffic Data Processing and Flow Analysis</a></h2>
+                    <img src="screenshot2.png" alt="Traffic Data Analysis">
+                </div>
+            </div>
+            <button class="slide-btn left">&#10094;</button> 
+            <button class="slide-btn right">&#10095;</button> 
+        </div>
+    
+        </main>
 
     <footer>
         <p>GitHub <a href="https://github.com/chihyu0917">@chihyu0917</a></p>
