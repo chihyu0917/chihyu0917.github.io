@@ -67,28 +67,10 @@ footer p a{
     color: #fff;
 }
 
-.slider {
-    width: 100%;
-    overflow: hidden; /* 隱藏超出容器的部分 */
-}
-
-.slides {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.slide {
-    min-width: 100%; /* 每個slide的寬度和slider一樣 */
-    box-sizing: border-box;
-    padding: 20px;
-    text-align: center;
-}
-
 .slide img {
     width: 40%; /* 圖片的寬度 */
     height: auto;
 }
-
 .slide-btn {
     position: absolute;
     top: 50%;
@@ -100,11 +82,9 @@ footer p a{
     padding: 10px 20px;
     z-index: 2;
 }
-
 .left {
     left: 0;
 }
-
 .right {
     right: 0;
 }
