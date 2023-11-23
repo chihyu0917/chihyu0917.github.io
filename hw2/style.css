@@ -172,4 +172,8 @@ footer p a{
         display: block;
         margin: 10px 0;
     }
+    .responsive-table {
+        overflow-x: auto;
+        display: block;
+    }
 }
