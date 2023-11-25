@@ -1,0 +1,88 @@
+body {
+    font-family: 'Calluna', serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #031E31;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+    background-image: url('bg.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    color: #fff; 
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+main img {
+    width: 30%;
+    height: 30%;
+}
+
+main p {
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+img {
+    width: 100px; 
+    height: auto;
+}
+
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background: #76B0BC;
+    color: #fff;
+}
+
+footer p a{
+    color: #fff;
+}
+
+.responsive-iframe {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9的長寬比例 */
+    height: 0;
+    overflow: hidden;
+}
+
+.responsive-iframe iframe {
+    position: absolute;
+    top: 0;
+    left: 10%;
+    width: 80%;
+    height: 80%;
+}
+
+
+@media screen and (max-width: 600px) {
+    header nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+}
