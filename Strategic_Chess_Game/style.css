@@ -45,6 +45,11 @@ main img {
 main p {
     margin: 0 auto;
     max-width: 800px;
+    text-align: left;
+}
+
+main p a {
+    color: #fff;
 }
 
 img {
@@ -66,6 +71,7 @@ footer p a{
 
 .responsive-iframe {
     position: relative;
+    margin-top: 5%;
     padding-bottom: 56.25%; /* 16:9的長寬比例 */
     height: 0;
     overflow: hidden;
