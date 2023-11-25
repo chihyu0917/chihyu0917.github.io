@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
     showSlide(currentSlide);
 
     // 設定定時器自動轉換slide
-    setInterval(nextSlide, 3000); // 3秒切換一次
+    setInterval(nextSlide, 4000); // 4秒切換一次
 
     // 按鈕點擊事件
     document.querySelector(".slide-btn.left").addEventListener("click", function() {
