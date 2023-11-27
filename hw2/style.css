@@ -46,6 +46,9 @@ main p {
     margin: 0 auto;
     max-width: 800px;
 }
+main p a {
+    color: rgb(113, 113, 113);
+}
 
 .resume {
     max-width: 800px;
