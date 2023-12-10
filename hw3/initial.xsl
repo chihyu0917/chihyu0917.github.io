@@ -11,6 +11,7 @@
             <th>Initial</th>
             <th>FirstRank</th>
             <th>FinalRank</th>
+            <th>Now</th>
         </tr>
         <xsl:for-each select="Ranking">
             <xsl:sort select="Initial"/>
