@@ -6,6 +6,7 @@
 <xsl:template match="TotalRanking">
     <table>
         <tr>
+            <th>Country</th>
             <th>Name</th>
             <th>Initial</th>
             <th>FirstRank</th>
@@ -15,6 +16,7 @@
         <xsl:for-each select="Ranking">
             <xsl:sort select="Initial"/>
             <tr>
+                <td><xsl:value-of select="Country"/></td>
                 <td><xsl:value-of select="Name"/></td>
                 <td><xsl:value-of select="Initial"/></td>
                 <td><xsl:value-of select="FirstRank"/></td>
