@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>產品搜尋結果</title>
+        <title>Produce 48 Ranking</title>
         <script>
             function loadXMLDoc(filename) {
                 var xhttp = new XMLHttpRequest();
@@ -10,7 +10,7 @@
             }
 
             function displayResult(xslFile) {
-                var xml = loadXMLDoc("ex.xml");
+                var xml = loadXMLDoc("data.xml");
                 var xsl = loadXMLDoc(xslFile);
 
                 if (xml && xsl) {
@@ -19,7 +19,7 @@
                         xsltProcessor.importStylesheet(xsl);
                         var resultDocument = xsltProcessor.transformToFragment(xml, document);
                         if (resultDocument) {
-                            document.getElementById("xslresult").innerHTML = "<h1>產品搜尋結果</h1><p><b>摘要：</b>" + "//摘要" + "</p>";
+                            document.getElementById("xslresult").innerHTML = "<h1>Produce 48 Ranking</h1><p><b>摘要：</b>" + "</p>";
                             document.getElementById("xslresult").appendChild(resultDocument);
                         } else {
                             console.error("Transformation returned null.");
