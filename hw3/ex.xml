@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<產品搜尋>
-    <摘要>搜尋字串：“滑鼠 鍵盤”，共找到 2 筆</摘要>
-    <產品>
-        <貨號>12478943</貨號>
-        <品名>手不痛健康滑鼠</品名>
-        <定價>$234</定價>
-        <說明頁 網址="http://foo.bar/mouse/12478943">上市發表會</說明頁>
-    </產品>
-    <產品>
-        <貨號>83424723</貨號>
-        <品名>打不響靜悄悄鍵盤</品名>
-        <定價>$067</定價>
-        <說明頁 網址="http://foo.bar/kbd/83424723">產品特性</說明頁>
-    </產品>
-</產品搜尋>
+<ProductSearch>
+    <Summary>搜尋字串：“滑鼠 鍵盤”，共找到 2 筆</Summary>
+    <Product>
+        <ItemNumber>12478943</ItemNumber>
+        <ProductName>手不痛健康滑鼠</ProductName>
+        <Price>$234</Price>
+        <DescriptionPage URL="http://foo.bar/mouse/12478943">上市發表會</DescriptionPage>
+    </Product>
+    <Product>
+        <ItemNumber>83424723</ItemNumber>
+        <ProductName>打不響靜悄悄鍵盤</ProductName>
+        <Price>$067</Price>
+        <DescriptionPage URL="http://foo.bar/kbd/83424723">產品特性</DescriptionPage>
+    </Product>
+</ProductSearch>

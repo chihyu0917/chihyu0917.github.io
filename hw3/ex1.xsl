@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8" ?> 
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"> 
 <xsl:template match="/">
-    <xsl:apply-templates select="產品搜尋"/>
+    <xsl:apply-templates select="ProductSearch"/>
 </xsl:template>
-<xsl:template match="產品搜尋">
+<xsl:template match="ProductSearch">
     <table>
         <tr>
-            <th>品名</th>
-            <th>定價</th>
-            <th>說明頁</th>
+            <th>ProductName</th>
+            <th>Price</th>
+            <th>DescriptionPage</th>
         </tr>
         <!-- <xsl:apply-templates select="產品">
             <xsl:sort select="品名"/>
         </xsl:apply-templates>        -->
-        <xsl:for-each select="產品">
-            <xsl:sort select="品名"/>
+        <xsl:for-each select="Product">
+            <xsl:sort select="ProductName"/>
             <tr>
-                <td><xsl:value-of select="品名"/></td>
-                <td><xsl:value-of select="定價"/></td>
-                <td><a href="{說明頁/@網址}"><xsl:value-of select="說明頁"/></a></td>
+                <td><xsl:value-of select="ProductName"/></td>
+                <td><xsl:value-of select="Price"/></td>
+                <td><a href="{DescriptionPage/@URL}"><xsl:value-of select="DescriptionPage"/></a></td>
             </tr>
         </xsl:for-each>
     </table>

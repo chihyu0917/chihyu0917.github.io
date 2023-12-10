@@ -19,7 +19,7 @@
                         xsltProcessor.importStylesheet(xsl);
                         var resultDocument = xsltProcessor.transformToFragment(xml, document);
                         if (resultDocument) {
-                            document.getElementById("xslresult").innerHTML = '';
+                            document.getElementById("xslresult").innerHTML = "<h1>產品搜尋結果</h1><p><b>摘要：</b>" + "//摘要" + "</p>";
                             document.getElementById("xslresult").appendChild(resultDocument);
                         } else {
                             console.error("Transformation returned null.");
