@@ -12,14 +12,26 @@
             function displayResult() {
                 var xml = loadXMLDoc("ex.xml");
                 var xsl = loadXMLDoc("ex1.xsl");
-                var xsltProcessor = new XSLTProcessor();
-                xsltProcessor.importStylesheet(xsl);
-                var resultDocument = xsltProcessor.transformToFragment(xml, document);
-                document.getElementById("xslresult").innerHTML = "<h1>產品搜尋結果</h1><p><b>摘要：</b>" + "//摘要" + "</p>";
-                console.log(xsltProcessor);
-                console.log(resultDocument);
-                // document.getElementById("xslresult").appendChild(resultDocument);
+
+                if (xml && xsl) {
+                    try {
+                        var xsltProcessor = new XSLTProcessor();
+                        xsltProcessor.importStylesheet(xsl);
+                        var resultDocument = xsltProcessor.transformToFragment(xml, document);
+                        if (resultDocument) {
+                            document.getElementById("xslresult").innerHTML = '';
+                            document.getElementById("xslresult").appendChild(resultDocument);
+                        } else {
+                            console.error("Transformation returned null.");
+                        }
+                    } catch (e) {
+                        console.error("Error during XSLT processing:", e);
+                    }
+                } else {
+                    console.error("Failed to load XML or XSL file.");
+                }
             }
+
 
             function init() {
                 displayResult();
