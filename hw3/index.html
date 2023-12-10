@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>產品搜尋結果</title>
+        <script>
+            function loadXMLDoc(filename) {
+                var xhttp = new XMLHttpRequest();
+                xhttp.open("GET", filename, false);
+                xhttp.send("");
+                return xhttp.responseXML;
+            }
+
+            function displayResult() {
+                var xml = loadXMLDoc("ex.xml");
+                var xsl = loadXMLDoc("ex1.xsl");
+                var xsltProcessor = new XSLTProcessor();
+                xsltProcessor.importStylesheet(xsl);
+                var resultDocument = xsltProcessor.transformToFragment(xml, document);
+                document.getElementById("xslresult").innerHTML = "<h1>產品搜尋結果</h1><p><b>摘要：</b>" + root.selectSingleNode("//摘要").text + "</p>";
+                document.getElementById("xslresult").appendChild(resultDocument);
+            }
+
+            function init() {
+                displayResult();
+            }
+
+            function viewsrc() {
+                alert(document.body.innerHTML);
+            }
+        </script>
+    </head>
+    <body onload="init();">
+        <div id="xslhead"></div>
+        <hr>
+        <button onclick="displayResult();">名稱排序</button>
+        <button onclick="displayResult();">價格排序</button>
+        <button onclick="viewsrc();">檢視原始檔</button>
+        <hr>
+        <div id="xslresult"></div>
+    </body>
+</html>
