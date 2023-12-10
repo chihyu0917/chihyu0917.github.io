@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ProductSearch>
-    <Product>
-        <ItemNumber>12478943</ItemNumber>
-        <ProductName>手不痛健康滑鼠</ProductName>
-        <Price>$234</Price>
-        <DescriptionPage URL="http://foo.bar/mouse/12478943">上市發表會</DescriptionPage>
-    </Product>
-    <Product>
-        <ItemNumber>83424723</ItemNumber>
-        <ProductName>打不響靜悄悄鍵盤</ProductName>
-        <Price>$067</Price>
-        <DescriptionPage URL="http://foo.bar/kbd/83424723">產品特性</DescriptionPage>
-    </Product>
+<TotalRanking>
+    <Ranking>
+        <Country>韓國</Country>
+        <Name>張員瑛</Name>
+        <Initial>B</Initial>
+        <FirstRank>3</FirstRank>
+        <FinalRank>1</FinalRank>
+        <Now URL="https://zh.wikipedia.org/wiki/IVE_(%E7%B5%84%E5%90%88)">IVE</Now>
+    </Ranking>
+    <Ranking>
+        <Country>日本</Country>
+        <Name>宮脇咲良</Name>
+        <Initial>A</Initial>
+        <FirstRank>4</FirstRank>
+        <FinalRank>2</FinalRank>
+        <Now URL="https://zh.wikipedia.org/wiki/IVE_(%E7%B5%84%E5%90%88)">IVE</Now>
+    </Ranking>
 </ProductSearch>
