@@ -10,14 +10,17 @@
             <th>定價</th>
             <th>說明頁</th>
         </tr>
-        <xsl:for-each select="產品">
+        <xsl:apply-templates select="產品">
+            <xsl:sort select="品名"/>
+        </xsl:apply-templates>       
+        <!-- <xsl:for-each select="產品">
             <xsl:sort select="品名"/>
             <tr>
                 <td><xsl:value-of select="品名"/></td>
                 <td><xsl:value-of select="定價"/></td>
                 <td><a href="{說明頁/@網址}"><xsl:value-of select="說明頁"/></a></td>
             </tr>
-        </xsl:for-each>
+        </xsl:for-each> -->
     </table>
 </xsl:template>
 </xsl:stylesheet>
