@@ -23,10 +23,10 @@
                         var cartHtml = "<ul>";
                         for (var i = 0; i < orders.length; i++) {
                             cartHtml += "<li>" + 
-                                "<h3>" + orders[i].getElementsByTagName("Singer")[0].textContent + "</h3><br>" +
+                                "<h2>" + orders[i].getElementsByTagName("Singer")[0].textContent + "</h2>" +
                                 orders[i].getElementsByTagName("AlbumName")[0].textContent + "<br>" + 
                                 "<image src='" + orders[i].getElementsByTagName("AlbumImageURL")[0].textContent + "' width='300px'>" + "<br>" +
-                                "<h3>" + orders[i].getElementsByTagName("AlbumPrice")[0].textContent + "</h3><br>" +
+                                "<h2>" + orders[i].getElementsByTagName("AlbumPrice")[0].textContent + "</h2>" +
                                 "</li>";
                         }
                         cartHtml += "</ul>";
