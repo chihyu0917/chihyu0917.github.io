@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Produce 48 Ranking</title>
+        <title>Shopping Cart</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
         <script>
@@ -11,21 +11,47 @@
                 return xhttp.responseXML;
             }
 
-            function displayResult(xslFile) {
-                var xml = loadXMLDoc("ex.xml");
-                var xsl = loadXMLDoc(xslFile);
+            function displayResult() {
+                var xml = loadXMLDoc("data.xml");
+                console.log(xml);
+                // var xsl = loadXMLDoc(xslFile);
 
-                if (xml && xsl) {
+                // if (xml && xsl) {
+                if (xml) {
                     try {
-                        var xsltProcessor = new XSLTProcessor();
-                        xsltProcessor.importStylesheet(xsl);
-                        var resultDocument = xsltProcessor.transformToFragment(xml, document);
-                        if (resultDocument) {
-                            document.getElementById("xslresult").innerHTML = "<h1>Produce 48 Ranking</h1><p><b>簡介：</b>" + "韓國Mnet的2018年選秀節目，最後前12名組成女團IZ*ONE" + "</p>";
-                            document.getElementById("xslresult").appendChild(resultDocument);
-                        } else {
-                            console.error("Transformation returned null.");
+                        // var xsltProcessor = new XSLTProcessor();
+                        // xsltProcessor.importStylesheet(xsl);
+                        // var resultDocument = xsltProcessor.transformToFragment(xml, document);
+                        // var resultDocument = xml;
+                        // if (resultDocument) {
+                        //     document.getElementById("xmllist").innerHTML = "<h1>Produce 48 Ranking</h1><p><b>簡介：</b>" + "韓國Mnet的2018年選秀節目，最後前12名組成女團IZ*ONE" + "</p>";
+                        //     document.getElementById("xmllist").appendChild(resultDocument);
+                        
+                        // } else {
+                        //     console.error("Transformation returned null.");
+                        // }
+                        // Parse the XML
+                        // var parser = new DOMParser();
+                        // var xmlDoc = parser.parseFromString(xml, "text/xml");
+                        // var xmlDoc = xml.responseXML;
+                        var xmlDoc = xml;   
+                        console.log(xmlDoc);
+
+                        // Generate HTML
+                        var orders = xmlDoc.getElementsByTagName("Order");
+                        var cartHtml = "<ul>";
+                        for (var i = 0; i < orders.length; i++) {
+                            cartHtml += "<li>" + 
+                                orders[i].getElementsByTagName("Singer")[0].textContent + "<br>" +
+                                orders[i].getElementsByTagName("AlbumName")[0].textContent + "<br>" +
+                                orders[i].getElementsByTagName("AlbumPrice")[0].textContent +
+                                "</li>";
                         }
+                        cartHtml += "</ul>";
+
+                        // Display in cart
+                        document.getElementById("xmllist").innerHTML = cartHtml;
+
                     } catch (e) {
                         console.error("Error during XSLT processing:", e);
                     }
@@ -55,7 +81,7 @@
         </header>
         <div id="xslhead"></div>
         <hr>
-        <button onclick="displayResult('ex1.xsl');">初評級</button>
+        <button onclick="displayResult('ex1.xsl');">訂購</button>
         <button onclick="displayResult('ex2.xsl');">一公排名</button>
         <button onclick="displayResult('ex3.xsl');">最終排名</button>
         <button onclick="viewsrc();">檢視原始檔</button>
@@ -64,7 +90,7 @@
             <button><a href="ex.xml">輸入資料 (xml)</a></button>
         </div>
         <hr>
-        <div id="xslresult"></div>
+        <div id="xmllist"></div>
         <footer>
             <p>GitHub <a href="https://github.com/chihyu0917">@chihyu0917</p>
         </footer>

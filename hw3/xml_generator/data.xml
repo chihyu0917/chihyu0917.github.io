@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Orders>
+    <Order>
+        <Singer>IZ*ONE</Singer>
+        <AlbumName>第一張迷你專輯「Color*IZ」(韓國進口COLOR版)</AlbumName>
+        <Type>Korean CD</Type>
+        <AlbumURL>https://www.5music.com.tw/CDList-C.asp?cdno=439475678807</AlbumURL>
+        <AlbumImageURL>https://www.5music.com.tw/cdpic/zn2/6201810236936.jpg</AlbumImageURL>
+        <AlbumPrice>458</AlbumPrice>
+    </Order>
+</Orders>
