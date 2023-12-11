@@ -13,50 +13,31 @@
 
             function displayResult() {
                 var xml = loadXMLDoc("data.xml");
-                console.log(xml);
-                // var xsl = loadXMLDoc(xslFile);
-
-                // if (xml && xsl) {
+                
                 if (xml) {
                     try {
-                        // var xsltProcessor = new XSLTProcessor();
-                        // xsltProcessor.importStylesheet(xsl);
-                        // var resultDocument = xsltProcessor.transformToFragment(xml, document);
-                        // var resultDocument = xml;
-                        // if (resultDocument) {
-                        //     document.getElementById("xmllist").innerHTML = "<h1>Produce 48 Ranking</h1><p><b>簡介：</b>" + "韓國Mnet的2018年選秀節目，最後前12名組成女團IZ*ONE" + "</p>";
-                        //     document.getElementById("xmllist").appendChild(resultDocument);
-                        
-                        // } else {
-                        //     console.error("Transformation returned null.");
-                        // }
-                        // Parse the XML
-                        // var parser = new DOMParser();
-                        // var xmlDoc = parser.parseFromString(xml, "text/xml");
-                        // var xmlDoc = xml.responseXML;
                         var xmlDoc = xml;   
                         console.log(xmlDoc);
 
-                        // Generate HTML
                         var orders = xmlDoc.getElementsByTagName("Order");
                         var cartHtml = "<ul>";
                         for (var i = 0; i < orders.length; i++) {
                             cartHtml += "<li>" + 
-                                orders[i].getElementsByTagName("Singer")[0].textContent + "<br>" +
-                                orders[i].getElementsByTagName("AlbumName")[0].textContent + "<br>" +
-                                orders[i].getElementsByTagName("AlbumPrice")[0].textContent +
+                                "<h3>" + orders[i].getElementsByTagName("Singer")[0].textContent + "</h3><br>" +
+                                orders[i].getElementsByTagName("AlbumName")[0].textContent + "<br>" + 
+                                "<image src='" + orders[i].getElementsByTagName("AlbumImageURL")[0].textContent + "' width='300px'>" + "<br>" +
+                                "<h3>" + orders[i].getElementsByTagName("AlbumPrice")[0].textContent + "</h3><br>" +
                                 "</li>";
                         }
                         cartHtml += "</ul>";
 
-                        // Display in cart
                         document.getElementById("xmllist").innerHTML = cartHtml;
 
                     } catch (e) {
                         console.error("Error during XSLT processing:", e);
                     }
                 } else {
-                    // console.error("Failed to load XML or XSL file.");
+                    // console.error("Failed to load XML.");
                 }
             }
 
@@ -67,6 +48,14 @@
 
             function viewsrc() {
                 alert(document.body.innerHTML);
+            }
+
+            function addInstance() {
+                
+            }
+
+            function deleteInstance() {
+                
             }
         </script>
     </head>
@@ -81,14 +70,13 @@
         </header>
         <div id="xslhead"></div>
         <hr>
-        <button onclick="displayResult('ex1.xsl');">訂購</button>
-        <button onclick="displayResult('ex2.xsl');">一公排名</button>
-        <button onclick="displayResult('ex3.xsl');">最終排名</button>
+        <button onclick="addInstance();">新增專輯</button>
+        <button onclick="deleteInstance();">刪除專輯</button>
         <button onclick="viewsrc();">檢視原始檔</button>
-        <div id="others">
+        <!-- <div id="others">
             <button><a href="ex1.xsl">初評級 (xsl)</a></button>
             <button><a href="ex.xml">輸入資料 (xml)</a></button>
-        </div>
+        </div> -->
         <hr>
         <div id="xmllist"></div>
         <footer>

@@ -80,6 +80,21 @@ button:hover {
     background-color: #e372ba;
 }
 
+#xmllist {
+    width: 80%;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.05);
+    color: #333;
+}
+
+#xmllist h3 {
+    color: #e45bb2;
+}
+
 #others button {
     background-color: #ffffff00;
     border: none;
