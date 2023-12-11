@@ -132,7 +132,7 @@ button:hover {
 }
 
 #others button a {
-    color: #eac473;
+    color: #e7b74f;
     text-decoration: none;
 }
 
@@ -142,6 +142,23 @@ hr {
 
 #xslhead {
     text-align: center;
+}
+
+#xform {
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+}
+
+#xform h2 {
+    color: #e8b852;
+}
+
+#xform input {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    width: 300px;
 }
 
 footer {
