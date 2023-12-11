@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <title>Produce 48 Ranking</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <script>
+            function loadXMLDoc(filename) {
+                var xhttp = new XMLHttpRequest();
+                xhttp.open("GET", filename, false);
+                xhttp.send("");
+                return xhttp.responseXML;
+            }
+
+            function displayResult(xslFile) {
+                var xml = loadXMLDoc("ex.xml");
+                var xsl = loadXMLDoc(xslFile);
+
+                if (xml && xsl) {
+                    try {
+                        var xsltProcessor = new XSLTProcessor();
+                        xsltProcessor.importStylesheet(xsl);
+                        var resultDocument = xsltProcessor.transformToFragment(xml, document);
+                        if (resultDocument) {
+                            document.getElementById("xslresult").innerHTML = "<h1>Produce 48 Ranking</h1><p><b>簡介：</b>" + "韓國Mnet的2018年選秀節目，最後前12名組成女團IZ*ONE" + "</p>";
+                            document.getElementById("xslresult").appendChild(resultDocument);
+                        } else {
+                            console.error("Transformation returned null.");
+                        }
+                    } catch (e) {
+                        console.error("Error during XSLT processing:", e);
+                    }
+                } else {
+                    // console.error("Failed to load XML or XSL file.");
+                }
+            }
+
+
+            function init() {
+                displayResult();
+            }
+
+            function viewsrc() {
+                alert(document.body.innerHTML);
+            }
+        </script>
+    </head>
+    <body onload="init();">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="index.html">XML Viewer</a></li>
+                    <li><a href="../xml_generator/index.html">XML Generator</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div id="xslhead"></div>
+        <hr>
+        <button onclick="displayResult('ex1.xsl');">初評級</button>
+        <button onclick="displayResult('ex2.xsl');">一公排名</button>
+        <button onclick="displayResult('ex3.xsl');">最終排名</button>
+        <button onclick="viewsrc();">檢視原始檔</button>
+        <div id="others">
+            <button><a href="ex1.xsl">初評級 (xsl)</a></button>
+            <button><a href="ex.xml">輸入資料 (xml)</a></button>
+        </div>
+        <hr>
+        <div id="xslresult"></div>
+    </body>
+</html>
