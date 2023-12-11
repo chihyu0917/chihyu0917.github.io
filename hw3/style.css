@@ -33,7 +33,7 @@ table, th, td {
 }
 
 th {
-    background-color: #f8f8f8;
+    background-color: #e1a6cb;
     color: #333;
     padding: 10px;
 }
@@ -81,4 +81,15 @@ hr {
 
 #xslhead {
     text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+    button {
+        display: block;
+        margin: 5%;
+    }
+    table {
+        overflow-x: auto;
+        display: block;
+    }
 }
