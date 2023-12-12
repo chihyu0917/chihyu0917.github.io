@@ -53,37 +53,38 @@
             function addInstance() {
                 var formHtml = "<h2>新增專輯</h2>" +
                             "<form id='newOrderForm'>" +
-                            "<label for='singer'>Singer:</label><br>" +
-                            "<input type='text' id='singer' name='singer'><br>" +
-                            "<label for='albumName'>Album Name:</label><br>" +
-                            "<input type='text' id='albumName' name='albumName'><br>" +
-                            "<label for='albumPrice'>Album Price:</label><br>" +
-                            "<input type='text' id='albumPrice' name='albumPrice'><br>" +
-                            "<label for='albumImageUrl'>Album Image URL:</label><br>" +
-                            "<input type='text' id='albumImageUrl' name='albumImageUrl'><br>" +
+                            "<label for='Singer'>Singer:</label><br>" +
+                            "<input type='text' id='Singer' name='Singer'><br>" +
+                            "<label for='AlbumName'>Album Name:</label><br>" +
+                            "<input type='text' id='AlbumName' name='AlbumName'><br>" +
+                            "<label for='AlbumPrice'>Album Price:</label><br>" +
+                            "<input type='text' id='AlbumPrice' name='AlbumPrice'><br>" +
+                            "<label for='AlbumImageUrl'>Album Image URL:</label><br>" +
+                            "<input type='text' id='AlbumImageUrl' name='AlbumImageUrl'><br>" +
                             "<input type='button' value='新增' onclick='submitNewAlbum();'><br>" +
                             "</form>";
                 document.getElementById("xform").innerHTML = formHtml;
             }
 
             function submitNewAlbum() {
-                var xml2 = loadXMLDoc("output.xml");
-                
-                if (xml2) {
-                    try {
-                            var xmlDoc2 = xml2;
+                var singer = document.getElementById('Singer').value;
+                var albumName = document.getElementById('AlbumName').value;
+                var albumPrice = document.getElementById('AlbumPrice').value;
+                var albumImageUrl = document.getElementById('AlbumImageUrl').value;
 
-                    } catch (e) {
-                        console.error("Error during XSLT processing:", e);
+                var xhr = new XMLHttpRequest();
+                xhr.open("POST", "http://127.0.0.1:5000/add_order", true);
+                xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+                xhr.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        console.log("Response:", this.responseText);
+                        // Additional actions upon successful request can be added here
                     }
-                } else {
-                    // console.error("Failed to load XML.");
-                }
-                // Here you would collect the form data
-                // and add it to your XML. This requires further JavaScript logic.
-                // However, without a server-side backend or JavaScript XML manipulation,
-                // the new order cannot be permanently added to 'data.xml'.
+                };
+                var data = "Singer=" + encodeURIComponent(Singer) + "&AlbumName=" + encodeURIComponent(AlbumName) + "&AlbumPrice=" + encodeURIComponent(AlbumPrice) + "&AlbumImageUrl=" + encodeURIComponent(AlbumImageUrl);
+                xhr.send(data);
             }
+
 
             function deleteInstance() {
                 
