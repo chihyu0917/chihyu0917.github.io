@@ -26,6 +26,7 @@ function displayResult() {
             cartHtml += "</ul>";
 
             document.getElementById("xmllist").innerHTML = cartHtml;
+            console.log(cartHtml);
 
         } catch (e) {
             console.error("Error during XSLT processing:", e);
@@ -97,4 +98,38 @@ function viewsrc() {
 
 function deleteInstance() {
     
+}
+
+function submitForm() {
+    var formData = {
+        Singer: document.getElementById('Singer').value,
+        AlbumName: document.getElementById('AlbumName').value,
+        AlbumImageURL: document.getElementById('AlbumImageURL').value,
+        AlbumPrice: document.getElementById('AlbumPrice').value
+    };
+
+    // call the backend API to update the data
+    updateData(formData);
+}
+
+
+function updateData(data) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("POST", "http://127.0.0.1:5000/addOrder", true);
+    xhttp.setRequestHeader("Content-Type", "application/json");
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log("Response received: ", this.responseText);
+            // Reload or update the page content as needed
+            displayResult();  
+        }
+    };
+    xhttp.send(JSON.stringify(data));
+}
+
+
+// 加载并显示数据
+function init() {
+    // 加载并显示原始数据
+    // ...
 }
