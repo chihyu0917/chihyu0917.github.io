@@ -34,3 +34,5 @@ output_path = 'output.xml'
 
 orders = parse_txt_to_list(txt_path)
 generate_xml_from_list(template_path, orders, output_path)
+
+
