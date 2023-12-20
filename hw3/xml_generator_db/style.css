@@ -1,0 +1,187 @@
+header {
+    background-color: #eac473;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+header nav ul li a {
+    font-family: 'Times New Roman', Times, serif;
+    color: #fff;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    color: #333;
+}
+
+h1 {
+    color: #444;
+    text-align: center;
+}
+
+#xslresult {
+    width: 80%;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.05);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #e1a6cb;
+    color: #333;
+    padding: 10px;
+}
+
+td {
+    padding: 10px;
+    text-align: center;
+}
+
+button {
+    background-color: #eac473;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #eac473;
+}
+
+#xmllist {
+    width: 450px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.05);
+    color: #333;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#xmllist ul {
+    padding: 0;
+}
+
+#xmllist li {
+    list-style: none;
+    margin: 10px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px rgba(0,0,0,.1);
+    width: 400px; /* Adjust width as needed */
+}
+
+#xmllist li img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+#xmllist h2 {
+    color: #eac473;
+}
+
+#others button {
+    background-color: #ffffff00;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#others button:hover {
+    background-color: #ffffff00;
+}
+
+#others button a {
+    color: #e7b74f;
+    text-decoration: none;
+}
+
+hr {
+    margin-top: 20px;
+}
+
+#xslhead {
+    text-align: center;
+}
+
+#xform {
+    border: none;
+    padding: 10px 20px;
+    margin: 10px;
+}
+
+#xform h2 {
+    color: #e8b852;
+}
+
+#xform input {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    width: 300px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background: #eac473;
+    color: #fff;
+}
+footer p a{
+    color: #fff;
+}
+
+@media screen and (max-width: 600px) {
+    header nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+    button {
+        display: block;
+        margin: 5%;
+    }
+    table {
+        overflow-x: auto;
+        display: block;
+    }
+}
