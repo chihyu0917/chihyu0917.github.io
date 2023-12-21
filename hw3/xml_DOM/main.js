@@ -140,6 +140,86 @@ function deleteData(index) {
     xhttp.send(JSON.stringify({"index": index}));
 }
 
+function modifyDisplay() { 
+    var xml = loadXMLDoc("output.xml");
+    
+    if (xml) {
+        try {
+            var xmlDoc = xml;
+            var orders = xmlDoc.getElementsByTagName("Order");
+            var cartHtml = "<ul>";
+            for (var i = 0; i < orders.length; i++) {
+                var order = orders[i];
+                var orderInfo = {
+                    id: order.getAttribute("id"),
+                    singer: order.getElementsByTagName("Singer")[0].textContent,
+                    albumName: order.getElementsByTagName("AlbumName")[0].textContent,
+                    albumImageURL: order.getElementsByTagName("AlbumImageURL")[0].textContent,
+                    albumPrice: order.getElementsByTagName("AlbumPrice")[0].textContent
+                };
+                cartHtml += "<li>" +
+                    "<h2>" + orderInfo.singer + "</h2>" +
+                    orderInfo.albumName + "<br>" + 
+                    "<image src='" + orderInfo.albumImageURL + "' width='300px'>" + "<br>" +
+                    "<h2>" + orderInfo.albumPrice + "</h2>" +
+                    "<input type='button' value='修改' onclick='modifyForm(" + JSON.stringify(orderInfo) + ");'><br>" +
+                    "</li>";
+            }
+            cartHtml += "</ul>";
+
+            document.getElementById("xmllist").innerHTML = cartHtml;
+        } catch (e) {
+            console.error("Error during XSLT processing:", e);
+        }
+    } else {
+        console.error("Failed to load XML.");
+    }
+}
+
+function modifyForm(orderInfo) {
+    var formHtml = "<h3>修改專輯 " + orderInfo.id + " 內容</h3><br>" +
+                "<form id='modifyOrderForm'>" +
+                "<label for='Singer'>Singer:</label><br>" +
+                "<input type='text' id='Singer' name='Singer' value='" + orderInfo.singer + "'><br>" +
+                "<label for='AlbumName'>Album Name:</label><br>" +
+                "<input type='text' id='AlbumName' name='AlbumName' value='" + orderInfo.albumName + "'><br>" +
+                "<label for='AlbumPrice'>Album Price:</label><br>" +
+                "<input type='text' id='AlbumPrice' name='AlbumPrice' value='" + orderInfo.albumPrice + "'><br>" +
+                "<label for='AlbumImageURL'>Album Image URL:</label><br>" +
+                "<input type='text' id='AlbumImageURL' name='AlbumImageURL' value='" + orderInfo.albumImageURL + "'><br>" +
+                "<input type='button' value='修改' onclick='submitModifyAlbum(\"" + orderInfo.id + "\");'><br>" +
+                "</form>";
+    document.getElementById("xform").innerHTML = formHtml;
+}
+
+function submitModifyAlbum(index) {
+    var orderData = {
+        id: index,
+        Singer: document.getElementById('Singer').value,
+        AlbumName: document.getElementById('AlbumName').value,
+        AlbumPrice: document.getElementById('AlbumPrice').value,
+        AlbumImageURL: document.getElementById('AlbumImageURL').value
+    };
+
+    // call the backend API to update the data
+    submitModifyData(orderData);
+}
+
+function submitModifyData(orderData) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("POST", "http://127.0.0.1:5000/modifyOrder", true);
+    xhttp.setRequestHeader("Content-type", "application/json");
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log("Response received: ", this.responseText);
+            modifyDisplay();  // 重新加载显示更新后的 XML 数据
+        }
+    };
+    xhttp.send(JSON.stringify(orderData));
+}
+
+
+
 function submitForm() {
     var formData = {
         Singer: document.getElementById('Singer').value,
@@ -149,11 +229,11 @@ function submitForm() {
     };
 
     // call the backend API to update the data
-    updateData(formData);
+    addData(formData);
 }
 
 
-function updateData(data) {
+function addData(data) {
     var xhttp = new XMLHttpRequest();
     xhttp.open("POST", "http://127.0.0.1:5000/addOrder", true);
     xhttp.setRequestHeader("Content-Type", "application/json");

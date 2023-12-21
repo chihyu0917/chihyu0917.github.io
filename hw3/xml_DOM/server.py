@@ -59,6 +59,30 @@ def delete_order():
     else:
         return "Order not found"
 
+@app.route('/modifyOrder', methods=['POST'])
+@cross_origin()  # 解決CORS問題
+def update_order():
+    data = json.loads(request.data)
+    order_id = data['id']
+    tree = ET.parse('output.xml')
+    root = tree.getroot()
+
+    found = False
+    for order in root.findall('Order'):
+        if order.get('id') == order_id:  # 检查 ID 属性
+            order.find('Singer').text = data['Singer']
+            order.find('AlbumName').text = data['AlbumName']
+            order.find('AlbumPrice').text = data['AlbumPrice']
+            order.find('AlbumImageURL').text = data['AlbumImageURL']
+            found = True
+            break
+
+    if found:
+        tree.write('output.xml', encoding='utf-8', xml_declaration=True)
+        return "Order updated successfully"
+    else:
+        return "Order not found"
+
 
 
 if __name__ == '__main__':

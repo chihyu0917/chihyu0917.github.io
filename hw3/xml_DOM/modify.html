@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <title>Shopping Cart - Modify Albums</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <script src="main.js"></script>
+    </head>
+    <body onload="modifyDisplay();">
+        <header>
+            <nav>
+                <ul>
+                    <li><a href="../xml_viewer/index.html">XML Viewer</a></li>
+                    <li><a href="index.html">XML Generator</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div id="xslhead"></div>
+        <hr>
+        <!-- <button onclick="addInstance();">新增專輯</button>
+        <button onclick="deleteInstance();">刪除專輯</button> -->
+        <button><a href="index.html">Back to Main</a></button>
+        <button onclick="modifyDisplay();">顯示結果</button>
+        <button onclick="viewsrc();">檢視原始檔</button>
+        <div id="others">
+            <button><a href="template.xml">template資料 (xml)</a></button>
+            <button><a href="output.xml">生成資料 (xml)</a></button>
+            <button><a href="database.txt">原始資料 (txt)</a></button>
+        </div>
+        <hr>
+        <h2>修改專輯</h2>
+        <div id="xform"></div>
+        <div id="xmllist"></div>
+        <footer>
+            <p>GitHub <a href="https://github.com/chihyu0917">@chihyu0917</p>
+        </footer>
+    </body>
+</html>
