@@ -177,7 +177,7 @@ function modifyDisplay() {
 }
 
 function modifyForm(orderInfo) {
-    var formHtml = "<h3>修改專輯 " + orderInfo.id + " 內容</h3><br>" +
+    var formHtml = "<h3>修改專輯內容</h3><br>" +
                 "<form id='modifyOrderForm'>" +
                 "<label for='Singer'>Singer:</label><br>" +
                 "<input type='text' id='Singer' name='Singer' value='" + orderInfo.singer + "'><br>" +
