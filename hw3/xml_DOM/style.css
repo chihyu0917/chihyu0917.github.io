@@ -80,6 +80,13 @@ button:hover {
     background-color: #eac473;
 }
 
+input {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 5px;
+    width: 200px;
+}
+
 #xmllist {
     width: 450px;
     margin: auto;
@@ -197,6 +204,16 @@ hr {
     padding: 10px;
     border-radius: 5px;
     width: 300px;
+}
+
+#file-content {
+    width: 80%;
+    margin: auto;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.05);
+    color: #333;
 }
 
 footer {
