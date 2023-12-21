@@ -152,8 +152,9 @@ button:hover {
     border-radius: 5px;
 }
 
-#xform h2 {
+#xform h3 {
     color: #eac473;
+    text-align: center;
 }
 
 #others button {
