@@ -96,8 +96,48 @@ function viewsrc() {
 // }
 
 
-function deleteInstance() {
+function deleteDisplay() { 
+    var xml = loadXMLDoc("output.xml");
     
+    if (xml) {
+        try {
+            var xmlDoc = xml;
+            var orders = xmlDoc.getElementsByTagName("Order");
+            var cartHtml = "<ul>";
+            for (var i = 0; i < orders.length; i++) {
+                var orderID = orders[i].getAttribute("id"); // 获取 Order 元素的 id 属性
+                cartHtml += "<li>" + 
+                    "<h2>" + orders[i].getElementsByTagName("Singer")[0].textContent + "</h2>" +
+                    orders[i].getElementsByTagName("AlbumName")[0].textContent + "<br>" + 
+                    "<image src='" + orders[i].getElementsByTagName("AlbumImageURL")[0].textContent + "' width='300px'>" + "<br>" +
+                    "<h2>" + orders[i].getElementsByTagName("AlbumPrice")[0].textContent + "</h2>" +
+                    "<input type='button' value='刪除' onclick='deleteData(\"" + orderID + "\");'><br>" + // 使用 orderID
+                    "</li>";
+            }
+            cartHtml += "</ul>";
+
+            document.getElementById("xmllist").innerHTML = cartHtml;
+        } catch (e) {
+            console.error("Error during XSLT processing:", e);
+        }
+    } else {
+        console.error("Failed to load XML.");
+    }
+}
+
+
+function deleteData(index) {
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("POST", "http://127.0.0.1:5000/deleteOrder", true);
+    xhttp.setRequestHeader("Content-Type", "application/json");
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            console.log("Response received: ", this.responseText);
+            // Reload or update the page content as needed
+            deleteDisplay();  
+        }
+    }
+    xhttp.send(JSON.stringify({"index": index}));
 }
 
 function submitForm() {

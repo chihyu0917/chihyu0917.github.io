@@ -20,7 +20,10 @@ def generate_xml_from_list(template_path, orders, output_path):
     root.clear()
 
     for order_data in orders:
+        # 创建新 Order，并添加 ID
+        order_id = str(len(root.findall('Order')))
         order = ET.SubElement(root, "Order")
+        order.set('id', order_id)  # 设置 ID 属性
         for key, value in order_data.items():
             child = ET.SubElement(order, key)
             child.text = value
