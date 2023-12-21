@@ -5,6 +5,27 @@ import xml.etree.ElementTree as ET
 
 app = Flask(__name__)
 
+@app.route('/generateXML', methods=['POST'])
+@cross_origin() # 解決CORS問題
+def generateXML():
+    data = json.loads(request.data)
+    tree = ET.parse('template.xml')
+    root = tree.getroot()
+
+    root.clear()
+
+    for order_data in data:
+        # 創建新 Order，並添加 ID
+        order_id = str(len(root.findall('Order')))
+        order = ET.SubElement(root, "Order")
+        order.set('id', order_id)  # 設置 ID 屬性
+        for key, value in order_data.items():
+            child = ET.SubElement(order, key)
+            child.text = value
+
+    tree.write('output.xml', encoding='utf-8', xml_declaration=True)
+    return "Order added successfully"
+
 # @app.route('/addOrder', methods=['POST'])
 # @cross_origin() # 解決CORS問題
 # def add_order():
@@ -27,10 +48,10 @@ def add_order():
     tree = ET.parse('output.xml')
     root = tree.getroot()
 
-    # 创建新 Order，并添加 ID
+    # 創建新 Order，並添加 ID
     order_id = str(len(root.findall('Order')))
     order = ET.SubElement(root, "Order")
-    order.set('id', order_id)  # 设置 ID 属性
+    order.set('id', order_id)  # 設置 ID 屬性
     for key, value in data.items():
         child = ET.SubElement(order, key)
         child.text = value
@@ -48,7 +69,7 @@ def delete_order():
 
     found = False
     for order in root.findall('Order'):
-        if order.get('id') == str(order_id):  # 检查 ID 属性
+        if order.get('id') == str(order_id):  # 檢查 ID 屬性
             root.remove(order)
             found = True
             break
@@ -69,7 +90,7 @@ def update_order():
 
     found = False
     for order in root.findall('Order'):
-        if order.get('id') == order_id:  # 检查 ID 属性
+        if order.get('id') == order_id:  # 檢查 ID 屬性
             order.find('Singer').text = data['Singer']
             order.find('AlbumName').text = data['AlbumName']
             order.find('AlbumPrice').text = data['AlbumPrice']
