@@ -80,6 +80,11 @@ button:hover {
     background-color: #eac473;
 }
 
+button a {
+    color: #fff;
+    text-decoration: none;
+}
+
 input {
     border: 1px solid #ddd;
     padding: 10px;
