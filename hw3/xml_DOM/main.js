@@ -29,7 +29,7 @@ function displayResult() {
             console.log(cartHtml);
 
         } catch (e) {
-            console.error("Error during XSLT processing:", e);
+            console.error("Error: ", e);
         }
     } else {
         // console.error("Failed to load XML.");
@@ -45,55 +45,37 @@ function viewsrc() {
     alert(document.body.innerHTML);
 }
 
-// function addInstance() {
-//     var formHtml = "<h2>新增專輯</h2>" +
-//                 "<form id='newOrderForm'>" +
-//                 "<label for='Singer'>Singer:</label><br>" +
-//                 "<input type='text' id='Singer' name='Singer'><br>" +
-//                 "<label for='AlbumName'>Album Name:</label><br>" +
-//                 "<input type='text' id='AlbumName' name='AlbumName'><br>" +
-//                 "<label for='AlbumPrice'>Album Price:</label><br>" +
-//                 "<input type='text' id='AlbumPrice' name='AlbumPrice'><br>" +
-//                 "<label for='AlbumImageUrl'>Album Image URL:</label><br>" +
-//                 "<input type='text' id='AlbumImageUrl' name='AlbumImageUrl'><br>" +
-//                 "<input type='button' value='新增' onclick='submitNewAlbum();'><br>" +
-//                 "</form>";
-//     document.getElementById("xform").innerHTML = formHtml;
-// }
+function conditionDisplay() {
+    var xml = loadXMLDoc("output.xml");
+    
+    if (xml) {
+        try {
+            var xmlDoc = xml;
+            var orders = xmlDoc.getElementsByTagName("Order");
 
-// function submitNewAlbum() {
-//     var singer = document.getElementById('Singer').value;
-//     var albumName = document.getElementById('AlbumName').value;
-//     var albumPrice = document.getElementById('AlbumPrice').value;
-//     var albumImageUrl = document.getElementById('AlbumImageUrl').value;
+            var priceRange = document.getElementById("AlbumPrice").value;
+            var cartHtml = "<ul>";
+            for (var i = 0; i < orders.length; i++) {
+                // var orderID = orders[i].getAttribute("id"); // 獲取 Order 元素的 id 屬性
+                if (orders[i].getElementsByTagName("AlbumPrice")[0].textContent > priceRange) {
+                    cartHtml += "<li>" + 
+                        "<h2>" + orders[i].getElementsByTagName("Singer")[0].textContent + "</h2>" +
+                        orders[i].getElementsByTagName("AlbumName")[0].textContent + "<br>" + 
+                        "<image src='" + orders[i].getElementsByTagName("AlbumImageURL")[0].textContent + "' width='300px'>" + "<br>" +
+                        "<h2>" + orders[i].getElementsByTagName("AlbumPrice")[0].textContent + "</h2>" +
+                        "</li>";
+                }
+            }
+            cartHtml += "</ul>";
 
-//     var xmlData = '<Order>' +
-//                     '<Singer>' + escapeHtml(singer) + '</Singer>' +
-//                     '<AlbumName>' + escapeHtml(albumName) + '</AlbumName>' +
-//                     '<AlbumPrice>' + escapeHtml(albumPrice) + '</AlbumPrice>' +
-//                     '<AlbumImageURL>' + escapeHtml(albumImageUrl) + '</AlbumImageURL>' +
-//                 '</Order>';
-
-//     var xhttp = new XMLHttpRequest();
-//     xhttp.open("POST", "http://127.0.0.1:5000/updateXML", true);
-//     xhttp.setRequestHeader("Content-type", "application/xml");
-//     xhttp.onreadystatechange = function() {
-//         if (this.readyState == 4 && this.status == 200) {
-//             console.log("Response received: ", this.responseText);
-//             // Reload or update the page content as needed
-//         }
-//     };
-//     xhttp.send("newOrder=" + encodeURIComponent(xmlData));
-// }
-
-// function escapeHtml(unsafe) {
-//     return unsafe
-//         .replace(/&/g, "&amp;")
-//         .replace(/</g, "&lt;")
-//         .replace(/>/g, "&gt;")
-//         .replace(/"/g, "&quot;")
-//         .replace(/'/g, "&#039;");
-// }
+            document.getElementById("xmllist").innerHTML = cartHtml;
+        } catch (e) {
+            console.error("Error: ", e);
+        }
+    } else {
+        console.error("Failed to load XML.");
+    }
+}    
 
 
 function deleteDisplay() { 
@@ -105,7 +87,7 @@ function deleteDisplay() {
             var orders = xmlDoc.getElementsByTagName("Order");
             var cartHtml = "<ul>";
             for (var i = 0; i < orders.length; i++) {
-                var orderID = orders[i].getAttribute("id"); // 获取 Order 元素的 id 属性
+                var orderID = orders[i].getAttribute("id"); // 獲取 Order 元素的 id 屬性
                 cartHtml += "<li>" + 
                     "<h2>" + orders[i].getElementsByTagName("Singer")[0].textContent + "</h2>" +
                     orders[i].getElementsByTagName("AlbumName")[0].textContent + "<br>" + 
@@ -118,7 +100,7 @@ function deleteDisplay() {
 
             document.getElementById("xmllist").innerHTML = cartHtml;
         } catch (e) {
-            console.error("Error during XSLT processing:", e);
+            console.error("Error:", e);
         }
     } else {
         console.error("Failed to load XML.");
@@ -169,7 +151,7 @@ function modifyDisplay() {
 
             document.getElementById("xmllist").innerHTML = cartHtml;
         } catch (e) {
-            console.error("Error during XSLT processing:", e);
+            console.error("Error:", e);
         }
     } else {
         console.error("Failed to load XML.");
@@ -193,6 +175,14 @@ function modifyForm(orderInfo) {
 }
 
 function submitModifyAlbum(index) {
+    if (document.getElementById('Singer').value == "" || document.getElementById('AlbumName').value == "" || document.getElementById('AlbumImageURL').value == "" || document.getElementById('AlbumPrice').value == "") {
+        alert("請填寫完整資料");
+        return;
+    }
+    else if (document.getElementById('AlbumImageURL').value.indexOf("http") == -1) {
+        alert("請輸入正確的圖片網址");
+        return;
+    }
     var orderData = {
         id: index,
         Singer: document.getElementById('Singer').value,
@@ -212,13 +202,21 @@ function submitModifyData(orderData) {
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             console.log("Response received: ", this.responseText);
-            modifyDisplay();  // 重新加载显示更新后的 XML 数据
+            modifyDisplay();  // Reload or update the page content as needed
         }
     };
     xhttp.send(JSON.stringify(orderData));
 }
 
 function submitForm() {
+    if (document.getElementById('Singer').value == "" || document.getElementById('AlbumName').value == "" || document.getElementById('AlbumImageURL').value == "" || document.getElementById('AlbumPrice').value == "") {
+        alert("請填寫完整資料");
+        return;
+    }
+    else if (document.getElementById('AlbumImageURL').value.indexOf("http") == -1) {
+        alert("請輸入正確的圖片網址");
+        return;
+    }
     var formData = {
         Singer: document.getElementById('Singer').value,
         AlbumName: document.getElementById('AlbumName').value,
@@ -245,10 +243,17 @@ function addData(data) {
 }
 
 
-let fileContent = ''; // 用于存储读取的文件内容
+let fileContent = ''; // 讀取的檔案內容
 
 function readFile() {
     var input = document.getElementById('fileInput');
+
+    // 檢查是否為txt檔
+    if (!input.files[0].name.endsWith('.txt')) {
+        alert('請上傳txt檔');
+        return;
+    }
+
     if (input.files && input.files[0]) {
         var reader = new FileReader();
         
@@ -263,12 +268,12 @@ function readFile() {
 
 function convertToJson() {
     try {
-        // 将 CSV 数据转换为 JSON
+        
         var json = csvToJson(fileContent);
-        // document.getElementById('json-content').innerText = JSON.stringify(json, null, 4);
+        
     } catch (e) {
         console.error("Error converting", e);
-        // document.getElementById('json-content').innerText = 'Error converting to JSON';
+        
     }
 }
 
@@ -288,7 +293,6 @@ function csvToJson(csv) {
         result.push(obj);
     }
 
-    // return result; // 返回 JSON 对象
     generateXML(result);
 }
 
@@ -306,9 +310,3 @@ function generateXML(result) {
     xhttp.send(JSON.stringify(result));
 }
 
-
-// 加载并显示数据
-function init() {
-    // 加载并显示原始数据
-    // ...
-}
