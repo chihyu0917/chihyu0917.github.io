@@ -11,10 +11,6 @@ header {
     padding: 1rem 0;
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
 }
 
 header nav ul {
@@ -24,12 +20,17 @@ header nav ul {
 
 header nav ul li {
     display: inline;
-    margin: 0 20px;
+    margin: 0 10px;
 }
 
 header nav ul li a {
     color: #fff;
     text-decoration: none;
+}
+
+header nav ul li a:hover {
+    color: #76B0BC;
+    /* text-decoration: underline; */
 }
 
 main {
@@ -40,25 +41,26 @@ main {
     color: #fff; 
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
+    /* margin-top: 80px; */
 }
 
 main .slider .slides .slide h2 a{
     color: #fff; 
 }
 
+main .slider .slides .slide h2 a:hover{
+    color: #76B0BC; 
+    text-decoration: none;
+}
+
 main img {
-    width: 30%;
-    height: 30%;
+    width: 50%;
+    height: 50%;
 }
 
 main p {
     margin: 0 auto;
     max-width: 800px;
-}
-
-img {
-    width: 100px; 
-    height: auto;
 }
 
 
@@ -67,15 +69,17 @@ footer {
     padding: 20px 0;
     background: #76B0BC;
     color: #fff;
+    margin-top: auto;
 }
 footer p a{
     color: #fff;
 }
 
-.slide img {
-    width: 40%; /* 圖片的寬度 */
-    height: auto;
+footer p a:hover{
+    color: #031E31;
+    text-decoration: none;
 }
+
 .slide-btn {
     position: absolute;
     top: 50%;
@@ -87,12 +91,15 @@ footer p a{
     padding: 10px 20px;
     z-index: 2;
 }
+
 .left {
     left: 0;
 }
+
 .right {
     right: 0;
 }
+
 
 
 @media screen and (max-width: 600px) {

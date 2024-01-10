@@ -11,10 +11,6 @@ header {
     padding: 1rem 0;
     text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1000;
 }
 
 header nav ul {
@@ -24,12 +20,17 @@ header nav ul {
 
 header nav ul li {
     display: inline;
-    margin: 0 20px;
+    margin: 0 10px;
 }
 
 header nav ul li a {
     color: #fff;
     text-decoration: none;
+}
+
+header nav ul li a:hover {
+    color: #76B0BC;
+    /* text-decoration: underline; */
 }
 
 main {
@@ -40,6 +41,7 @@ main {
     color: #fff; 
     text-align: center;
     font-family: 'Times New Roman', Times, serif;
+    /* margin-top: 80px; */
 }
 
 main img {
@@ -67,6 +69,11 @@ footer {
 
 footer p a{
     color: #fff;
+}
+
+footer p a:hover{
+    color: #031E31;
+    text-decoration: none;
 }
 
 .responsive-iframe {
