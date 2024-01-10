@@ -3,7 +3,5 @@ IVE,第一張單曲「ELEVEN」(韓國進口2版),https://www.5music.com.tw/cdpi
 IVE,第二張單曲「LOVE DIVE」(韓國進口2版),https://www.5music.com.tw/cdpic/zn2/62022461452.jpg,438元
 IVE,(WONYOUNG版)第三張單曲「After Like(Jewel Ver.)」(韓國進口版),https://www.5music.com.tw/cdpic/zn2/620228236476.jpg,559元
 IVE,(YUJIN版)第三張單曲「After Like(Jewel Ver.)」(韓國進口版),https://www.5music.com.tw/cdpic/zn2/720228233224.jpg,559元
-IVE,(REI版)第三張單曲「After Like(Jewel Ver.)」(韓國進口版),https://www.5music.com.tw/cdpic/zn2/220228235646.jpg,559元
-IVE,(LEESEO版)第三張單曲「After Like(Jewel Ver.)」(韓國進口版),https://www.5music.com.tw/cdpic/zn2/420228239141.jpg,559元
-IVE,(LIZ版)第三張單曲「After Like(Jewel Ver.)」(韓國進口版),https://www.5music.com.tw/cdpic/zn2/720228238725.jpg,559元
-IVE,(GAEUL版)第三張單曲「After Like(Jewel Ver.)」(韓國進口版),https://www.5music.com.tw/cdpic/zn2/220228233445.jpg,559元
+LE SSERAFIM,(KAZUHA版)UNFORGIVEN(日本進口Weverse Shop JAPAN),https://www.5music.com.tw/cdpic/zn2/920238149281.jpg,745元
+LE SSERAFIM,(許允真版)UNFORGIVEN(日本進口Weverse Shop JAPAN),https://www.5music.com.tw/cdpic/zn2/820238145883.jpg,745元

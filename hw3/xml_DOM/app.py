@@ -1,9 +1,37 @@
-from flask import Flask, request
+from flask import Flask, request, render_template, send_from_directory, current_app
 from flask_cors import cross_origin
 import json
 import xml.etree.ElementTree as ET
 
 app = Flask(__name__)
+
+
+@app.route('/getDatabase')
+def get_database():
+    return send_from_directory(current_app.root_path, 'database.txt')
+
+@app.route('/getDatabase2')
+def get_database2():
+    return send_from_directory(current_app.root_path, 'database2.txt')
+
+@app.route('/getOutputXML')
+def get_output_xml():
+    return send_from_directory(current_app.root_path, 'output.xml')
+
+@app.route('/getTemplateXML')
+def get_template_xml():
+    return send_from_directory(current_app.root_path, 'template.xml')
+
+
+@app.route('/')
+@cross_origin() # 解決CORS問題
+def index():
+    return render_template('index.html')
+
+@app.route('/upload')
+@cross_origin() # 解決CORS問題
+def upload_file():
+    return render_template('upload.html')
 
 @app.route('/generateXML', methods=['POST'])
 @cross_origin() # 解決CORS問題
@@ -24,22 +52,13 @@ def generateXML():
             child.text = value
 
     tree.write('output.xml', encoding='utf-8', xml_declaration=True)
+    # tree.write('../output.xml', encoding='utf-8', xml_declaration=True)
     return "Order added successfully"
 
-# @app.route('/addOrder', methods=['POST'])
-# @cross_origin() # 解決CORS問題
-# def add_order():
-#     data = json.loads(request.data)
-#     tree = ET.parse('output.xml')
-#     root = tree.getroot()
-
-#     order = ET.SubElement(root, "Order")
-#     for key, value in data.items():
-#         child = ET.SubElement(order, key)
-#         child.text = value
-
-#     tree.write('output.xml', encoding='utf-8', xml_declaration=True)
-#     return "Order added successfully"
+@app.route('/add')
+@cross_origin() # 解決CORS問題
+def addItem():
+    return render_template('generate.html')
 
 @app.route('/addOrder', methods=['POST'])
 @cross_origin() # 解決CORS問題
@@ -58,6 +77,11 @@ def add_order():
 
     tree.write('output.xml', encoding='utf-8', xml_declaration=True)
     return "Order added successfully"
+
+@app.route('/delete')
+@cross_origin() # 解決CORS問題
+def deleteItem():
+    return render_template('delete.html')
 
 @app.route('/deleteOrder', methods=['POST'])
 @cross_origin() # 解決CORS問題
@@ -79,6 +103,11 @@ def delete_order():
         return "Order deleted successfully"
     else:
         return "Order not found"
+
+@app.route('/modify')
+@cross_origin() # 解決CORS問題
+def modifyItem():
+    return render_template('modify.html')
 
 @app.route('/modifyOrder', methods=['POST'])
 @cross_origin()  # 解決CORS問題
@@ -104,7 +133,10 @@ def update_order():
     else:
         return "Order not found"
 
-
+@app.route('/query')
+@cross_origin() # 解決CORS問題
+def queryItem():
+    return render_template('query.html')
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -1,0 +1,6 @@
+Singer,AlbumName,AlbumImageURL,AlbumPrice
+LE SSERAFIM,(1版)第一張迷你專輯「FEARLESS」(韓國進口版),https://www.5music.com.tw/cdpic/zn2/020224255945.jpg,528元
+LE SSERAFIM,(隨機版)第二張迷你專輯「ANTIFRAGILE(COMPACT Ver.)」(韓國進口版),https://www.5music.com.tw/cdpic/zn2/920221046768.jpg,328元
+LE SSERAFIM,(3版)第一張正規專輯「UNFORGIVEN」(韓國進口版),https://www.5music.com.tw/cdpic/zn2/920234173091.jpg,588元
+NewJeans,(隨機版)第一張單曲「New Jeans(Bluebook ver.)」(韓國進口版),https://www.5music.com.tw/cdpic/zn2/92023679658.jpg,548元
+NewJeans,(隨機版)第一張單曲「OMG(Message Card ver.)」(韓國進口版),https://www.5music.com.tw/cdpic/zn2/420231276922.jpg,448元

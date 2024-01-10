@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <title>Shopping Cart</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <link rel="stylesheet" href="style.css"> -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+        <!-- <script src="main.js"></script> -->
+        <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    </head>
+    <body onload="displayResult();">
+        <header>
+            <nav>
+                <ul>
+                    <!-- <li><a href="../xml_viewer/index.html">XML Viewer</a></li> -->
+                    <li><a href="/">XML Generator</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div id="xslhead"></div>
+        <hr>
+        <!-- <button onclick="addInstance();">新增專輯</button>
+        <button onclick="deleteInstance();">刪除專輯</button> -->
+        <!-- <button onclick="displayResult();">顯示結果</button> -->
+        <button><a href="/upload">生成XML</a></button>
+        <button><a href="/add">新增專輯</a></button>
+        <button><a href="/modify">修改專輯</a></button>
+        <button><a href="/delete">刪除專輯</a></button>
+        <button><a href="/query">查詢專輯</a></button>
+        <button onclick="viewsrc();">檢視原始檔</button>
+        <div id="others">
+            <!-- <button><a href="template.xml">template資料 (xml)</a></button>
+            <button><a href="output.xml">生成資料 (xml)</a></button>
+            <button><a href="database.txt">原始資料 (txt)</a></button>
+            <button><a href="database2.txt">原始資料2 (txt)</a></button> -->
+            <button><a href="/getTemplateXML">template資料 (xml)</a></button>
+            <button><a href="/getOutputXML">生成資料 (xml)</a></button>
+            <button><a href="/getDatabase">原始資料 (txt)</a></button>
+            <button><a href="/getDatabase2">原始資料2 (txt)</a></button>
+        </div>
+        <hr>
+        <h2>主畫面</h2>
+        <div id="xmllist"></div>
+        <!-- <div id="xform"></div> -->
+        <footer>
+            <p>GitHub <a href="https://github.com/chihyu0917">@chihyu0917</p>
+        </footer>
+    </body>
+</html>
