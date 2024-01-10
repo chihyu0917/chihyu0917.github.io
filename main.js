@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
     showSlide(currentSlide);
 
     // 設定定時器自動轉換slide
-    setInterval(nextSlide, 4000); // 4秒切換一次
+    setInterval(nextSlide, 4500); // 4.5秒切換一次
 
     // 按鈕點擊事件
     document.querySelector(".slide-btn.left").addEventListener("click", function() {
@@ -37,22 +37,3 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-// const slides = document.querySelectorAll('.slide');
-// const dots = document.querySelectorAll('.dot');
-
-// dots.forEach((dot, index) => {
-//     dot.addEventListener('click', () => {
-//         updateSlides(index);
-//         updateDots(index);
-//     });
-// });
-
-// function updateSlides(index) {
-//     slides.forEach(slide => slide.classList.remove('active'));
-//     slides[index].classList.add('active');
-// }
-
-// function updateDots(index) {
-//     dots.forEach(dot => dot.classList.remove('active'));
-//     dots[index].classList.add('active');
-// }
