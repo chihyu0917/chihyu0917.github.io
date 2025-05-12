@@ -1,0 +1,132 @@
+body {
+    font-family: 'Calluna', serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+header {
+    background-color: #031E31;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+header nav ul li a {
+    color: #fff;
+    font-size: 0.85rem;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #76B0BC;
+    /* text-decoration: underline; */
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 20px;
+    background-image: url('bg.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    color: #fff; 
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    /* margin-top: 80px; */
+}
+
+main .slider .slides .slide h2 a{
+    color: #fff; 
+    transition: color 0.3s ease;
+}
+
+main .slider .slides .slide h2 a:hover{
+    color: #76B0BC; 
+    text-decoration: none;
+}
+
+main img {
+    width: 50%;
+    height: 50%;
+}
+
+main p {
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+
+footer {
+    text-align: center;
+    /* padding: 20px 0; */
+    background: #76B0BC;
+    color: #fff;
+    margin-top: auto;
+    padding: 1rem 0;
+}
+
+footer p a{
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+footer p a:hover{
+    color: #031E31;
+    text-decoration: none;
+}
+
+.slide-btn {
+    position: absolute;
+    top: 100%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 20px;
+    z-index: 2;
+    border-radius: 50%; /* 圓形按鈕 */
+    width: 40px; /* 按鈕大小 */
+    height: 40px; /* 按鈕大小 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: #031E31 0.3s; 
+}
+
+.left {
+    left: 0;
+}
+
+.right {
+    right: 0;
+}
+
+
+
+@media screen and (max-width: 700px) {
+    header nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    main img {
+        width: 70%;
+        height: 70%;
+    }
+}

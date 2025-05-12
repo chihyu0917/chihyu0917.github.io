@@ -1,61 +1,105 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chih-Yu | Sophie</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="main.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chih-Yu Huang | Sophie Huang</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="https://chihyu0917.github.io/">Home</a></li>
-                <li><a href="https://chihyu0917.github.io/Traffic_Data_Processing_and_Flow_Analysis/">Traffic Data Analysis</a></li>
-                <li><a href="https://chihyu0917.github.io/Strategic_Chess_Game/">Strategic Chess Game</a></li>
-                <li><a href="https://chihyu0917.github.io/YOLOv5_Detector/">YOLOv5 Detector</a></li>
-                <li><a href="https://chihyu0917.github.io/Star_Maze_Game/">Star Maze Game</a></li>
-                <li><a href="https://www.linkedin.com/in/chihyu-huang-sophie/">Linkedin</a></li>
-                <li><a href="https://github.com/chihyu0917">GitHub</a></li>
-            </ul>
-        </nav>
-    </header>
+  <!-- Top Navigation -->
+  <nav class="top-nav">
+    <ul>
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#projects">Projects</a></li>
+    </ul>
+  </nav>
 
-    <main>
-        <h1>SOPHIE HUANG</h1>
-        <h2>ABOUT ME</h2>
-        <p>Hi, I'm Sophie Huang. I'm a graduate student at University of Illinois Urbana-Champaign. I'm interested in object detection and machine learning. I had two software engineering internships in Advanced Driver Assistance Systems (ADAS). I'm also interested in full-stack web development. I'm looking for a full-time job or an internship in 2025. Please feel free to contact me if you have any opportunities for me. Thank you!</p>
-        <br></br>
-        <h2>PROJECTS</h2>
-        <div class="slider">
-            <div class="slides">
-                <div class="slide">
-                    <h2>Traffic Data Processing and Flow Analysis</h2>
-                    <a href="https://chihyu0917.github.io/Traffic_Data_Processing_and_Flow_Analysis/"><img src="screenshot2.png" alt="Traffic Data Analysis"></a>
-                </div>
-                <div class="slide">
-                    <h2>Strategic Chess Game</h2>
-                    <a href="https://chihyu0917.github.io/Strategic_Chess_Game/"><img src="screenshot3.png" alt="Strategic Chess Game"></a>
-                </div>
-                <div class="slide">
-                    <h2>YOLOv5 Detector</h2>
-                    <a href="https://chihyu0917.github.io/YOLOv5_Detector"><img src="screenshot4.jpg" alt="YOLOv5 Detector"></a>
-                </div>
-                <div class="slide">
-                    <h2>Star Maze Game</h2>
-                    <a href="https://chihyu0917.github.io/Star_Maze_Game/"><img src="screenshot1.png" alt="Star Maze Game"></a>
-                </div>
-            </div>
-            <button class="slide-btn left">&#10094;</button> 
-            <button class="slide-btn right">&#10095;</button> 
+  <div class="container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <img src="illinois.png" alt="Illinois" class="profile-pic">
+      <h2>Sophie Huang</h2>
+      <p>UIUC, MEng Electrical and Computer Enginnering</p>
+ 
+
+      <h3>Contact</h3>
+      <div class="contact-links">
+        <a href="https://linkedin.com/in/chihyu-huang-sophie/" target="_blank">LinkedIn</a>
+        <a href="https://github.com/chihyu0917" target="_blank">GitHub</a>
+      </div>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <section id="home">
+        <h1>Open to Opportunities 🚀</h1>
+        <p>Actively seeking roles for software engineering.</p>
+      </section>
+
+      <section id="about">
+        <h2>About Me</h2>
+        <p>I’m Sophie (Chih-Yu) Huang, a Master of Engineering candidate in Electrical &amp; Computer Engineering at UIUC. My research focuses on computer vision and diffusion models, and my previous internships include building ADAS solutions and object detection pipelines.</p>
+      </section>
+
+      <section id="projects">
+        <h2>Projects</h2>
+        <div class="pub-item">
+          <img src="ac.png" alt="3D-CNN Road Collisions">
+          <div>
+            <h3>Predicting Imminent Road Collisions Using 3D-CNN (2025)</h3>
+            <p>Custom PyTorch 3D-CNN with accident prediction.</p>
+            <a href="" target="_blank">📄 Article</a>
+          </div>
         </div>
+        <div class="pub-item">
+          <img src="movie_location.png" alt="Movie Locations Mapping">
+          <div>
+            <h3>Movie Locations Mapping &amp; Trip Planning (2025)</h3>
+            <p>Angular + Node.js + Google Maps API + MySQL to visualize 500+ filming locations globally.</p>
+          </div>
+        </div>
+        <div class="pub-item">
+          <img src="slb.png" alt="QR Code Scanner">
+          <div>
+            <h3>QR Code Scanner &amp; Inventory Management App (2025)</h3>
+            <p>Flutter + MySQL + cross-platform app with QR-code asset tracking.</p>
+            <a href="" target="_blank">📄 Article</a>
+          </div>
+        </div>
+        <div class="pub-item">
+          <img src="cv.png" alt="Geolocation Estimation">
+          <div>
+            <h3>Image-Based Geolocation Estimation using CNNs (2024)</h3>
+            <p>ResNet50 CNN + PyTorch + spatial partitioning, scene classification, multi-scale learning.</p>
+            <a href="https://chihyu0917.github.io//articles/Image-Based_Geolocation_Estimation_using_CNNs.pdf" target="_blank">📄 Article</a>
+          </div>
+        </div>
+        <div class="pub-item">
+          <img src="ar_hud.png" alt="AR HUD">
+          <div>
+            <h3>Thermal Imaging Object Detection and HUD Warning Interface (2024)</h3>
+            <p>YOLOv8 for Forward-collision Warning Systems in different weather up to 2 hrs.</p>
+          </div>
+        </div>
+        <div class="pub-item">
+          <img src="task.png" alt="Task Management System">
+          <div>
+            <h3>Task Management System (2024)</h3>
+            <p>Django + MySQL + web app for task management.</p>
+          </div>
+        </div>
+        <div class="pub-item">
+          <img src="screenshot2.png" alt="Traffic Data Analysis">
+          <div>
+            <h3>Traffic Data Processing and Flow Analysis (2023)</h3>
+            <p>D3.js + Plotly interactive dashboard to visualize and to predict traffic congestion.</p>
+          </div>
+        </div>
+      </section>
 
-        
-        </main>
-
-    <footer>
-        <p>GitHub <a href="https://github.com/chihyu0917">@chihyu0917</a></p>
-    </footer>
+    </main>
+  </div>
 </body>
 </html>
